@@ -6,6 +6,7 @@
 \usepackage{setspace}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{csquotes}
 \setlength{\parskip}{\medskipamount}
 \setlength{\parindent}{0pt}
 \setlength{\emergencystretch}{15pt}
@@ -30,20 +31,38 @@
 \section{Johdanto}
 \onehalfspacing
 Tämän tutkielman vatoitteena on esitellä gammafunktio, siihen liittyviä määritelmiä ja joitakin sovellustarkoituksia. Keskeisenä osana gammafunktiota on Bohr-Mollerupin lause, joka todistetaan...
+
+Gamma funktio on erinomainen työkalu laskiessa jonkin ei-positiivisen luvun kertomaa. 
 \newline
-Gammafunktio on ??eräänlainen?? kertoma, joka on määritelty kaikilla muilla luvuilla paitsi positiivisilla kokonaisluvuilla. 
-\newpage
-\section{Bohr-Mollerupin lause}
-Bohr-Mollerupin lauseen mukaan gammafunktio on ainoa kertomafunktion yleistys, joka on logaritmisesti konveksi. 
+Gammafunktio on on kertomafunktion yleistys, joka on määritelty kaikilla muilla luvuilla paitsi ei-positiivisilla kokonaisluvuilla. 
 \newpage
 
 
-\section{Eulerin integraali}
-Yleisin esitysmuoto gammafunktiolle on Leonard Eulerin määrittämä integraali, joka tunnetaan paremmin nimellä Eulerin toinen integraali. Tässä muodossa esitettynä gammafunktio näyttää seuraavalta:
+\section{Gammafunktio}
+Yleisin esitysmuoto gammafunktiolle on Leonard Eulerin vuonna 1729 määrittämä integraaliesitys
 \begin{align*}
     \Gamma(z) = \int_{0}^{\infty} e^{-t} t^{z-1} dt.
 \end{align*}
-Tämä Eulerin integraali on määritelty kaikilla muilla luvuilla paitsi ei-positiivisilla kokonaisluvuilla. Integraali on siis määritelty myös kompleksi luvuilla, joiden reaaliosan tulee kuitenkin olla positiivinen. \newline
+
+Gammafunktio on kertomafunktion yleistys, joten sille pätevät täysin samat ehdot kuin kertomafunktiolle. 
+
+Määritelmä(kertomafunktio) \newline
+Funktio $f: N \rightarrow N$ on kertomafunktio, jos seuraavat ehdot toteutuvat:
+
+\begin{quote}
+    (1) $f(1)=1$ \newline
+    (2) $f(n+1)=(n+1)f(n)$ \newline
+    Kun ehdot toteutuvat, niin voidaan merkitä $f(n)=n!$.
+\end{quote}
+Todistus \newline
+
+Koska gammafunktio on kertomafunktion yleistys, toteuttaa se seuraavat ehdot:
+
+\begin{quote}
+    (1) $\Gamma(1)=1$ \newline
+    (2) $\Gamma(x+1)=x+\Gamma(x)$ \newline
+    (3) $\Gamma(x)$ on logaritmisesti konveksi.
+\end{quote}
 Tutkitaan integraalia arvoilla $z=x+1$ ja $z=x$. \newline
 Osittaisintegroidaan integraali
 \begin{align*}
@@ -58,16 +77,35 @@ Nyt osittais integroidaan integraali \newline
 Huomataan, että $\Gamma(x+1) = x\Gamma(x)$ ja $\Gamma(1) = 1.$ \newline
 \newpage
 
-\section{Gamma funktio}\label{luk: gammafunktio}
+
+\section{Bohr-Mollerupin lause}
 \onehalfspacing
-Gamma funktioon päästään derivoimalla toistuvasti yhälöä \newline
-$\int_{0}^{\infty} e^{-xt} dt$ = $\frac{1}{x}$.
+Bohr-Mollerupin lauseen mukaan gammafunktio on ainoa kertomafunktion yleistys, joka on logaritmisesti konveksi.
 \newline
-Gamma funktio on erinomainen työkalu laskiessa jonkin ei-positiivisen luvun kertomaa. 
+
+Määritelmä (konveksisuus)
+\newline
+
+Lause(Born-Mollerupin lause)
+\newline
+
+Jos funktio $f(x)$ toteuttaa seuraavat kolme ehtoa, niin se on gammafunktio:
+\begin{quote}
+(1) $f(1)=1$ \newline
+(2) $f(x+1)=xf(x)$ \newline
+(3) Funktio $f(x)$ on logaritmisesti konveksi funktio.
+\end{quote}
+
+Todistus
+\newline
+Ehdot (1) ja (2) on jo todistettu, joten jäljelle jää todistaa ehto (3) todeksi. 
+
 \newpage
-\section{Sovelluskohteita????}
+\section{Sovelluskohteita}
 \newpage
 \section{Kirjallisuutta}
+\onehalfspacing
+[1]
 
 
 \end{document}
