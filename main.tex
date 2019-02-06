@@ -6,6 +6,11 @@
 \usepackage{setspace}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{maar}{Määritelmä}
+\theoremstyle{plain}
+\newtheorem{lause}[maar]{Lause}
 \usepackage{csquotes}
 \setlength{\parskip}{\medskipamount}
 \setlength{\parindent}{0pt}
@@ -30,24 +35,40 @@
 \newpage
 \section{Johdanto}
 \onehalfspacing
-Tämän tutkielman vatoitteena on esitellä gammafunktio, siihen liittyviä määritelmiä ja joitakin sovellustarkoituksia. Keskeisenä osana gammafunktiota on Bohr-Mollerupin lause, joka todistetaan...
+Tämän tutkielman vatoitteena on esitellä gammafunktio. Keskeisenä osana gammafunktiota on Bohr-Mollerupin lause, joka todistetaan...
 
-Gamma funktio on erinomainen työkalu laskiessa jonkin ei-positiivisen luvun kertomaa. 
-\newline
-Gammafunktio on on kertomafunktion yleistys, joka on määritelty kaikilla muilla luvuilla paitsi ei-positiivisilla kokonaisluvuilla. 
 \newpage
+
+
+
 
 
 \section{Gammafunktio}
 Yleisin esitysmuoto gammafunktiolle on Leonard Eulerin vuonna 1729 määrittämä integraaliesitys
 \begin{align*}
-    \Gamma(z) = \int_{0}^{\infty} e^{-t} t^{z-1} dt.
+     \Gamma(x) = \int_{0}^{\infty} e^{-t} t^{x-1} dt.
 \end{align*}
+
+Gammafunktio on epäoleellinen integraali. Tästä johtuen, tutkittaessa sen olemassa oloa, tulee se ensin määritellä hyvin. Tällöin täytyy siis tutkia määrättyjä integraaleja (a) $\int_{\epsilon}^{1} e^{-t} t^{x-1} dt$ ja (b) $\int_{1}^{\delta} e^{-t} t^{x-1} dt$.\newline
+
+Tutkitaan ensin määrättyä integraalia (a), kun $x>0$: \newline
+Kun luku $t$ on positiivinen, niin voidaan arvioida funktiota alaspäin seuraavasti
+\begin{align*}
+    e^{-t} t^{x-1} < t^{x-1}
+\end{align*} eli integtoitava osuus on pienempi kuin $t^{x-1}$. Saadaan siis
+\begin{align*}
+    \int_{\epsilon}^{1} e^{-t} t^{x-1} dt < \int_{\epsilon}^{1} t^{x-1} d = \frac{t^x}{x} = \frac{1}{x} - \frac{\epsilon^x}{x}.
+\end{align*}
+Kun $\epsilon \rightarrow 0$, niin $\frac{\epsilon^x}{x} \rightarrow 0$ ja tällöin myös $\frac{1}{x}-\frac{\epsilon^x}{x} \rightarrow \frac{1}{x}$. Integraali on siis ylhäältä rajoitettu välillä $(0, 1]$. Täten voidaan todeta, että integraali $\int_{\epsilon}^{1} e^{-t} t^{x-1} dt$ suppenee. \newline
+
+Tutkitaan seuraavaksi määrättyä integraalia (b), kun $x>$: \newline
+
 
 Gammafunktio on kertomafunktion yleistys, joten sille pätevät täysin samat ehdot kuin kertomafunktiolle. 
 
 Määritelmä(kertomafunktio) \newline
 Funktio $f: N \rightarrow N$ on kertomafunktio, jos seuraavat ehdot toteutuvat:
+
 
 \begin{quote}
     (1) $f(1)=1$ \newline
@@ -56,13 +77,6 @@ Funktio $f: N \rightarrow N$ on kertomafunktio, jos seuraavat ehdot toteutuvat:
 \end{quote}
 Todistus \newline
 
-Koska gammafunktio on kertomafunktion yleistys, toteuttaa se seuraavat ehdot:
-
-\begin{quote}
-    (1) $\Gamma(1)=1$ \newline
-    (2) $\Gamma(x+1)=x+\Gamma(x)$ \newline
-    (3) $\Gamma(x)$ on logaritmisesti konveksi.
-\end{quote}
 Tutkitaan integraalia arvoilla $z=x+1$ ja $z=x$. \newline
 Osittaisintegroidaan integraali
 \begin{align*}
@@ -78,34 +92,62 @@ Huomataan, että $\Gamma(x+1) = x\Gamma(x)$ ja $\Gamma(1) = 1.$ \newline
 \newpage
 
 
+
+
 \section{Bohr-Mollerupin lause}
 \onehalfspacing
-Bohr-Mollerupin lauseen mukaan gammafunktio on ainoa kertomafunktion yleistys, joka on logaritmisesti konveksi.
+Bohr-Mollerupin lauseen mukaan gammafunktio on ainoa kertomafunktion yleistys, joka on logaritmisesti konveksi. Tämä ominaisuus tekee gammafunktiosta erityisen.
 \newline
 
-Määritelmä (konveksisuus)
-\newline
+Määritelmä (konveksisuus)\newline
+Olkoon $X \subset \mathbb{R}, t \in (0, 1)$ ja funktio $f: X \rightarrow \mathbb{R}$. Funktio f on konveksi, jos kaikilla $x,y \in X$
+\begin{align}
+    f(tx+(1-t)y) \le tf(x)+(1-t)f(y).
+\end{align}
 
+
+\begin{maar}
+(logaritminen konveksisuus)
+\end{maar}
+
+
+\begin{maar}
+(gammafunktio)
+Koska gammafunktio on kertomafunktion yleistys, toteuttaa se seuraavat ehdot:
+\begin{quote}
+    (1) $\Gamma(1)=1$ \newline
+    (2) $\Gamma(x+1)=x+\Gamma(x)$ \newline
+    (3) $\Gamma(x)$ on logaritmisesti konveksi.
+\end{quote}
+\end{maar}
+
+\begin{lause}
 Lause(Born-Mollerupin lause)
 \newline
-
 Jos funktio $f(x)$ toteuttaa seuraavat kolme ehtoa, niin se on gammafunktio:
 \begin{quote}
 (1) $f(1)=1$ \newline
 (2) $f(x+1)=xf(x)$ \newline
 (3) Funktio $f(x)$ on logaritmisesti konveksi funktio.
 \end{quote}
+\end{lause}
 
-Todistus
+\begin{proof}
+
+\end{proof}
 \newline
 Ehdot (1) ja (2) on jo todistettu, joten jäljelle jää todistaa ehto (3) todeksi. 
 
 \newpage
-\section{Sovelluskohteita}
-\newpage
 \section{Kirjallisuutta}
 \onehalfspacing
-[1]
+[1] 
+\newline
+[2]
+\newline
+[3]
+\newline
+[4]
 
 
 \end{document}
