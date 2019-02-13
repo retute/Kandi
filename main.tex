@@ -45,28 +45,30 @@ Tämän tutkielman vatoitteena on esitellä gammafunktio. Keskeisenä osana gamm
 
 \section{Gammafunktio}
 Yleisin esitysmuoto gammafunktiolle on Leonard Eulerin vuonna 1729 määrittämä integraaliesitys
-\begin{align*}
+\begin{align}
      \Gamma(x) = \int_{0}^{\infty} e^{-t} t^{x-1} dt.
-\end{align*}
+\end{align}
 
-Gammafunktio on epäoleellinen integraali. Tästä johtuen, tutkittaessa sen olemassa oloa, tulee se ensin määritellä hyvin. Tällöin täytyy siis tutkia määrättyjä integraaleja (a) $\int_{\epsilon}^{1} e^{-t} t^{x-1} dt$ ja (b) $\int_{1}^{\delta} e^{-t} t^{x-1} dt$.\newline
+Gammafunktio on epäoleellinen integraali. Tästä johtuen, tutkittaessa sen olemassa oloa, tulee sen olla määritelty hyvin. Tällöin tutkitaan siis määrättyjä integraaleja (a) $\int_{\epsilon}^{1} e^{-t} t^{x-1} dt$ ja (b) $\int_{1}^{\delta} e^{-t} t^{x-1} dt$.\newline
 
-Tutkitaan ensin määrättyä integraalia (a), kun $x>0$: \newline
-Kun luku $t$ on positiivinen, niin voidaan arvioida funktiota alaspäin seuraavasti
+Tutkitaan ensin määrättyä integraalia (a), kun $x>0$:\newline
+Kun luku $t$ on positiivinen, niin integtoitava osuus on pienempi kuin $t^{x-1}$. Tällöin voidaan arvioida integraalia ylöspäin seuraavasti:
 \begin{align*}
-    e^{-t} t^{x-1} < t^{x-1}
-\end{align*} eli integtoitava osuus on pienempi kuin $t^{x-1}$. Saadaan siis
+    e^{-t} t^{x-1} < t^{x-1}.
+\end{align*} 
+Tästä saadaan 
 \begin{align*}
     \int_{\epsilon}^{1} e^{-t} t^{x-1} dt < \int_{\epsilon}^{1} t^{x-1} d = \frac{t^x}{x} = \frac{1}{x} - \frac{\epsilon^x}{x}.
 \end{align*}
 Kun $\epsilon \rightarrow 0$, niin $\frac{\epsilon^x}{x} \rightarrow 0$ ja tällöin myös $\frac{1}{x}-\frac{\epsilon^x}{x} \rightarrow \frac{1}{x}$. Integraali on siis ylhäältä rajoitettu välillä $(0, 1]$. Täten voidaan todeta, että integraali $\int_{\epsilon}^{1} e^{-t} t^{x-1} dt$ suppenee. \newline
 
-Tutkitaan seuraavaksi määrättyä integraalia (b), kun $x>$: \newline
+Tutkitaan seuraavaksi määrättyä integraalia (b), kun $x>0$: \newline
 
 
 Gammafunktio on kertomafunktion yleistys, joten sille pätevät täysin samat ehdot kuin kertomafunktiolle. 
 
-Määritelmä(kertomafunktio) \newline
+\begin{maar}
+(kertomafunktio)
 Funktio $f: N \rightarrow N$ on kertomafunktio, jos seuraavat ehdot toteutuvat:
 
 
@@ -75,20 +77,25 @@ Funktio $f: N \rightarrow N$ on kertomafunktio, jos seuraavat ehdot toteutuvat:
     (2) $f(n+1)=(n+1)f(n)$ \newline
     Kun ehdot toteutuvat, niin voidaan merkitä $f(n)=n!$.
 \end{quote}
-Todistus \newline
+\end{maar}
 
-Tutkitaan integraalia arvoilla $z=x+1$ ja $z=x$. \newline
-Osittaisintegroidaan integraali
+\begin{proof}
+Tutkitaan integraalia (1) arvoilla $n=x+1$ ja $n=x$. \newline
+Osittaisintegroidaan integraali, kun $a\rightarrow0$ ja $b\rightarrow\infty$
 \begin{align*}
-    \Gamma(x+1) & = \int_{0}^{\infty} e^{-t} t^{x} dt \\
-    & = 
+    \Gamma(x+1) & = \int_{a}^{b} e^{-t} t^{x} dt \\
+    & = -e^{-t}t^{x}\Big|_a^b+\int_a^b e^{-t}t^{x-1}dt \\
+    & = e^{-a}a^{x}-e^{-b}b^{x}+x\int_a^be^{-t}t^{x-1}dt.
 \end{align*}
+Kun $a\rightarrow0$, niin $a^x\rightarrow0$ ja tällöin myös $e^{-a}a^x \rightarrow0$. Koska tiedetään,   \newline
 Nyt osittais integroidaan integraali \newline
 \begin{align*}
     \Gamma(x) & = \int_{0}^{\infty} e^{-t} t^{x-1} dt \\
 & =
 \end{align*}
-Huomataan, että $\Gamma(x+1) = x\Gamma(x)$ ja $\Gamma(1) = 1.$ \newline
+Huomataan, että $\Gamma(x+1) = x\Gamma(x)$ ja $\Gamma(1) = 1.$
+\end{proof}
+
 \newpage
 
 
@@ -99,15 +106,18 @@ Huomataan, että $\Gamma(x+1) = x\Gamma(x)$ ja $\Gamma(1) = 1.$ \newline
 Bohr-Mollerupin lauseen mukaan gammafunktio on ainoa kertomafunktion yleistys, joka on logaritmisesti konveksi. Tämä ominaisuus tekee gammafunktiosta erityisen.
 \newline
 
-Määritelmä (konveksisuus)\newline
-Olkoon $X \subset \mathbb{R}, t \in (0, 1)$ ja funktio $f: X \rightarrow \mathbb{R}$. Funktio f on konveksi, jos kaikilla $x,y \in X$
-\begin{align}
+\begin{maar}
+(konveksisuus)
+Olkoon $X \subset \mathbb{R}, t \in (0, 1)$ ja funktio $f: X \rightarrow \mathbb{R}$. Funktio f on \emph{konveksi}, jos kaikilla $x,y \in X$
+\begin{align*}
     f(tx+(1-t)y) \le tf(x)+(1-t)f(y).
-\end{align}
+\end{align*}
+\end{maar}
 
 
 \begin{maar}
 (logaritminen konveksisuus)
+Olkoon $X \subset \mathbb{R}, t \in (0, 1)$. Funktio $f: X \rightarrow \mathbb{R}$ on sis määritelty ja positiivinen. Funktio f on \emph{logaritmisesti konveksi}, jos $logf(x)$ on \emph{konveksi}.
 \end{maar}
 
 
