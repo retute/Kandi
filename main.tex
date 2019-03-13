@@ -49,78 +49,76 @@ Yleisin esitysmuoto gammafunktiolle on Leonard Eulerin vuonna 1729 määrittäm�
      \Gamma(x) = \int_{0}^{\infty} e^{-t} t^{x-1} dt.
 \end{equation}
 
-Gammafunktio on epäoleellinen integraali. Tästä johtuen, tutkittaessa sen olemassa oloa, tulee sen olla määritelty hyvin. Tällöin tutkitaan siis määrättyjä integraaleja (a) $\int_{\epsilon}^{1} e^{-t} t^{x-1} dt$ ja (b) $\int_{1}^{\delta} e^{-t} t^{x-1} dt$.\newline
+Gammafunktio on epäoleellinen integraali. Tästä johtuen, tutkittaessa sen olemassa oloa, tulee sen olla määritelty hyvin. Tällöin tutkitaan siis määrättyjä integraaleja
+\begin{align*}
+    (a) \int_{\epsilon}^{1} e^{-t} t^{x-1} dt \\
+    (b) \int_{1}^{\delta} e^{-t} t^{x-1} dt.
+\end{align*}
 
-Tutkitaan ensin määrättyä integraalia (a), kun $x>0$:\newline
-Kun luku $t$ on positiivinen, niin integtoitava osuus on pienempi kuin $t^{x-1}$. Tällöin voidaan arvioida integraalia ylöspäin seuraavasti:
+Tutkitaan ensin määrättyä integraalia $(a)$, kun $x>0$:\newline
+Kun luku $t$ on positiivinen, niin integtoitava osuus on selvästi pienempi kuin $t^{x-1}$. Tällöin voidaan arvioida integraalia ylöspäin seuraavasti:
 \begin{align*}
     e^{-t} t^{x-1} < t^{x-1}.
 \end{align*} 
 Tästä saadaan 
 \begin{align*}
-    \int_{\epsilon}^{1} e^{-t} t^{x-1} dt < \int_{\epsilon}^{1} t^{x-1} d = \frac{t^x}{x} = \frac{1}{x} - \frac{\epsilon^x}{x}.
+    \int_{\epsilon}^{1} e^{-t} t^{x-1} dt < \int_{\epsilon}^{1} t^{x-1} d = \Big/_\epsilon^1 {t^x}x^{-1} = x^{-1} - \epsilon{^x}x^{-1}.
 \end{align*}
-Kun $\epsilon \rightarrow 0$, niin $\frac{\epsilon^x}{x} \rightarrow 0$ ja tällöin myös $\frac{1}{x}-\frac{\epsilon^x}{x} \rightarrow \frac{1}{x}$. Kun luku $\epsilon$ lähestyy nollaa, niin integraalin arvo karvaa monotonisesti. Integraali on siis ylhäältä rajoitettu välillä $(0, 1]$ ja raja-arvo
+Kun $\epsilon \rightarrow 0$, niin $\epsilon^{x}x^{-1} \rightarrow 0$ ja tällöin myös $x^{-1}-\epsilon{^x}x^{-1} \rightarrow \frac{1}{x}$. Kun $\epsilon\rightarrow0$, niin epäoleellinen integraali on  rajoitettu välillä $(0, 1]$ ja raja-arvo
 \begin{align*}
     \lim_{\epsilon\to\0}\int_\epsilon^{1}e^{-t}t^{x-1}dt
-\end{align*}on olemassa. Täten voidaan todeta, että integraali $\int_{\epsilon}^{1} e^{-t} t^{x-1} dt$ suppenee. \newline
+\end{align*}
+on olemassa. Täten voidaan todeta, että epäoleellinen integraali $\int_{0}^{1} e^{-t} t^{x-1} dt$ on olemassa ja se suppenee. \newline
 
-Tutkitaan seuraavaksi määrättyä integraalia (b), kun $x>0$: \newline
-Kun luku $t$ on positiivinen, niin kaikki $e^t\ge0$. Tästä seuraa, että kaikilla kokonaisluvuilla $n$ pitää paikkaansa, että $e^t\ge\frac{t^n}{n!}$. Tällöin myös $e^{-t}\le\frac{n!}{t^n}$ ja edelleen $e^{-t}t^{x-1}\le\frac{n!}{t^{n+1-x}}$. Valitaan jonkin $n>x+1$, jolloin saadaan integraalille yläraja $\delta=\frac{n!}{n-x}$ eli
+Tutkitaan seuraavaksi määrättyä integraalia $(b)$, kun $x>0$: \newline
+Kun luku $t$ on positiivinen, niin kaikki $e^t>0$. Tästä seuraa, että kaikilla kokonaisluvuilla $n$ pitää paikkaansa, että $e^t\ge\frac{t^n}{n!}$. Tällöin myös $e^{-t}\le\frac{n!}{t^n}$ ja edelleen $e^{-t}t^{x-1}\le{t^{-{n+1-x}}}{n!}$. Valitaan jonkin $n>x+1$, jolloin saadaan epäoleelliselle integraalille yläraja $\delta=\frac{n!}{n-x}$, jolloin
 \begin{align*}
     \int_1^{\delta}e^{-t}t^{x-1}dt.
 \end{align*}
-Nyt integraalin arvo kasvaa, kun $\delta$ kasvaa. Siis raja-arvo $\lim_{1\to\infty}\int_1^{\delta}e^{-t}t^{x-1}dt$ on olemassa.\newline
+Koska integraalin arvo kasvaa, kun $\delta$ kasvaa eli se kasvaa monotonisesti, niin raja-arvo 
+\begin{align*}
+    \lim_{1\to\infty}\int_1^{\delta}e^{-t}t^{x-1}dt
+\end{align*}
+on olemassa. Tällöin myös epäoleellinen integraali $\int_1^{\infty}e^{-t}t^{x-1}dt$ on olemassa.
 
-Koska gammafunktio on kertomafunktion yleistys, niin sille pätevät täysin samat ehdot kuin kertomafunktiolle. 
 
+
+\subsection{Kertomafunktio}
 \begin{maar}
 (kertomafunktio)
 Funktio $f: N \rightarrow N$ on kertomafunktio, jos seuraavat ehdot toteutuvat:
 \begin{quote}
     i) $f(1)=1$ \newline
     ii) $f(n+1)=(n+1)f(n)$ \newline
-    Kun ehdot toteutuvat, niin voidaan merkitä $f(n)=n!$.
+    Kun ehdot $i$ ja $ii$ toteutuvat, niin voidaan merkitä $f(n)=n!$.
 \end{quote}
 \end{maar}
-
-\begin{proof}
-Aloitetaan tutkimalla kohtaa i). Integroidaan gammafunktio $f(n)=\Gamma(x)$ arvolla $x=1$.
+Kertomafunktio on monelle tuttu jo entuudestaan. Sille ominaista on arvojen hyvin nopea kasvu. Esimerkiksi: $4! = 1\cdot 2\cdot3\cdot4=24$, kun taas $5! = 1\cdot\dots\cdot5=120$.
+Kohta $i)$ on selkeä, sillä luvun $1$ kertoma on luku itse eli $1!=1$. Kohta $ii)$ puolestaan on mielenkiintoinen, koska sen mukaan kertomafunktiolla on ominaisuus, että 
 \begin{equation}
-    \Gamma(1) & = \int_\epsilon^\delta e^{-t}t^{1-1} dt \\
-    & = \int_\epsilon^\delta e^{-t}dt \\
-    & = \Big/_\epsilon^\delta -e^{-t}
+    (n+1)! = (n+1)n!.
 \end{equation}
-Kun $\epsilon\rightarrow0$ ja $\delta\rightarrow\infty$, niin $-e^{-\delta}\rightarrow0$ ja $-e^{-\epsilon}\rightarrow1$. Siis $\Gamma(1)=1$.
-
-Nyt tutkitaan kohtaa ii) arvoilla $n=x+1$ ja $n=x$, kun $f(n)=\Gamma(n)$. \eqref{yhtalo:gammafunktio} \newline
-Osittaisintegroidaan integraali \eqref{yhtalo:gammafunktio}, kun $n=x+1$:
-\begin{align*}
-    \Gamma(x+1) & = \int_{\epsilon}^{\delta} e^{-t} t^{x} dt \\
-    & = \Big/_\epsilon^\delta -e^{-t}t^{x}+\int_\epsilon^\delta e^{-t}t^{x-1}dt \\
-    & = e^{-\epsilon}\epsilon^{x}-e^{-\delta}\delta^{x}+x\int_\epsilon^\delta e^{-t}t^{x-1}dt.
-\end{align*}
-Kun $\epsilon\rightarrow0$, niin $\epsilon^x\rightarrow0$ ja tällöin myös $e^{-\epsilon}\epsilon^x \rightarrow0$. Koska tiedetään, että $\frac{\delta^x}{e^\delta} < \frac{n!}{\delta^{n-x}}$. Nyt, kun $\delta\rightarrow\infty$, niin luku $\frac{n!}{\delta^{n-x}}\rightarrow0.$ Tällöin myös $\frac{\delta^x}{e^\delta}\rightarrow0$ ja toinenkin termi katoaa. Nyt jäljelle jää enää vain \begin{align*}
-   \Gamma(x+1) & =  x\int_\epsilon^\delta e^{-t}t^{x-1}dt \\
-    & = x\Gamma(x)
-\end{align*}
-
-Siis $\Gamma(x+1) = x\Gamma(x)$ ja $\Gamma(1) = 1.$
-\end{proof}
+Koska gammafunktio on kertomafunktion yleistys, niin sille pätevät täysin samat ehdot kuin kertomafunktiolle.
+Gammafunktio toteutaa kertomafunktion eli määritelmän 1 ehdot. Yhtälöstä $\eqref{yhtalo:gammafunktio}$ saadaan tutkittua ensimmäinen ehto, jolloin
+\begin{equation*}
+    \Gamma(1)=\int_0^\infty e^{-t}t^{1-1}dt=\int_0^\infty e^{-t}t^{0}dt = \int_0^\infty e^{-t}dt = 1.
+\end{equation*}
 
 \newpage
 
 
 
 
+
 \section{Bohr-Mollerupin lause}
 \onehalfspacing
-Bohr-Mollerupin lauseen mukaan gammafunktio on ainoa kertomafunktion yleistys, joka on logaritmisesti konveksi. Tämä ominaisuus tekee gammafunktiosta erityisen.
+Bohr-Mollerupin lauseen mukaan gammafunktio on ainoa kertomafunktion yleistys, joka on logaritmisesti konveksi. Tämä ominaisuus tekee gammafunktiosta erityisen. Funktio on konveksi, kun sen kuvaaja on alaspäin kupera. Bohr-Mollerupin lauseen mukaan gammafunktion logaritmi on siis alaspäin kupera kuvaaja.
 \newline
+Tämän 
 
 \begin{maar}
 (konveksisuus)
-Olkoon $X \subset \mathbb{R}, t \in (0, 1)$ ja funktio $f: X \rightarrow \mathbb{R}$. Funktio f on \emph{konveksi}, jos kaikilla $x,y \in X$
+Olkoon $X\subset\mathbb{R}, t \in (0, 1)$ ja funktio $f: X \rightarrow \mathbb{R}$. Funktio $f$ on \emph{konveksi}, jos kaikilla $x,y \in X$
 \begin{align*}
     f(tx+(1-t)y) \le tf(x)+(1-t)f(y).
 \end{align*}
@@ -129,22 +127,49 @@ Olkoon $X \subset \mathbb{R}, t \in (0, 1)$ ja funktio $f: X \rightarrow \mathbb
 
 \begin{maar}
 (logaritminen konveksisuus)
-Olkoon $X \subset \mathbb{R}, t \in (0, 1)$. Funktio $f: X \rightarrow \mathbb{R}$ on siis määritelty ja positiivinen. Funktio f on \emph{logaritmisesti konveksi}, jos $logf(x)$ on \emph{konveksi}.
+Olkoon $X\subset\mathbb{R}, t \in (0, 1)$. Funktio $f: X \rightarrow \mathbb{R}$ on siis määritelty ja positiivinen. Funktio $f$ on \emph{logaritmisesti konveksi}, jos $logf(x)$ on \emph{konveksi}.
 \end{maar}
 
-
-\begin{maar}
-(gammafunktio)
-Koska gammafunktio on kertomafunktion yleistys, toteuttaa se seuraavat ehdot:
-\begin{quote}
-    (1) $\Gamma(1)=1$ \newline
-    (2) $\Gamma(x+1)=x+\Gamma(x)$ \newline
-    (3) $\Gamma(x)$ on logaritmisesti konveksi.
-\end{quote}
-\end{maar}
 
 \begin{lause}
-Lause(Bohr-Mollerupin lause)
+(gammafunktio) Gammafunktio  toteuttaa seuraavat ehdot:
+\begin{quote}
+    i) $\Gamma(1)=1$ \newline
+    ii) $\Gamma(x+1)=x\Gamma(x)$ \newline
+    iii) $\Gamma(x)$ on logaritmisesti konveksi.
+\end{quote}
+\end{lause}
+
+\begin{proof}
+Ehto $i)$ saadaan suoraan sijoittamalla luku $1$ yhtälöön \eqref{yhtalo:gammafunktio}, kun $x>0$:
+\begin{align*}
+    \Gamma(1) = \int_0^\infty e^{-t}t^{1-1} dt = \int_0^\infty e^{-t}dt = 1.
+\end{align*}
+Ehto $ii)$ puolestaan voidaan osoittaa todeksi, kun sijoitetaan yhtälöön \eqref{yhtalo:gammafunktio} $x$:n paikalle $x+1$, kun $x>0$.
+\begin{equation}\label{yhtalo:joku}
+    \Gamma(x+1)=e^{-t}t^{(x+1)-1} = e^{-t}t^{x}
+\end{equation}
+Nyt osittaisintegroidaan integraali \eqref{yhtalo:joku}:
+\begin{align*}
+    \Gamma(x+1) & = \int_{\epsilon}^{\delta} e^{-t} t^{x} dt \\
+    & = \Big/_\epsilon^\delta -e^{-t}t^{x}+x\int_\epsilon^\delta e^{-t}t^{x-1}dt \\
+    & = e^{-\epsilon}\epsilon^{x}-e^{-\delta}\delta^{x}+x\int_\epsilon^\delta e^{-t}t^{x-1}dt.
+\end{align*}
+
+Kun $\epsilon\rightarrow0$, niin $\epsilon^x\rightarrow0$ ja tällöin myös $e^{-\epsilon}\epsilon^x \rightarrow0$. Tällöin osittaisintegraalin tuloksen ensimmäinen termi katoaa. Tämän lisäksi tiedetään, että $e^{-\delta}\delta^{x} < \frac{n!}{\delta^{n-x}}$. Nyt, kun $\delta\rightarrow\infty$, niin luku $\frac{n!}{\delta^{n-x}}\rightarrow0.$ Tällöin myös $e^{-\delta}\delta{^x}\rightarrow0$ ja toinenkin termi katoaa. Kun kaksi ensimmäistä termiä katoavat, niin jäljelle jää vain 
+\begin{align*}
+   \Gamma(x+1)=x\int_\epsilon^\delta e^{-t}t^{x-1}dt.
+\end{align*}
+
+Siis $\Gamma(x+1) = x\Gamma(x)$ eli ehto $ii)$ on myös tosi.\newline
+
+Kolmas todistus on huomattavasti haastavampi. Ehdon $iii)$ mukaan gammafunktion, $\Gamma(x)$, tulee olla logaritmisesti konveksi. Funktion $\Gamma(x)$ tulee siis olla määritelmän 3 mukainen. Käytännössä tämä tarkoittaa sitä, että funktion $log\Gamma(x)$ tulee olla konveksi.\newline
+
+Merkitään $g(x) = log\Gamma(x)$. Funktion $g(x)$ tulee olla \emph{koveksi}, jotta ehto $iii)$ toteutuu.
+\end{proof}
+
+\begin{lause}
+(Bohr-Mollerupin lause)
 \newline
 Jos funktio $f(x)$ toteuttaa seuraavat kolme ehtoa, niin se on gammafunktio:
 \begin{quote}
@@ -155,10 +180,9 @@ Jos funktio $f(x)$ toteuttaa seuraavat kolme ehtoa, niin se on gammafunktio:
 \end{lause}
 
 \begin{proof}
-
+Ehdot (1) ja (2) on jo todistettu, joten jäljelle jää osoittaa ehto (3) todeksi. 
 \end{proof}
 \newline
-Ehdot (1) ja (2) on jo todistettu, joten jäljelle jää osoittaa ehto (3) todeksi. 
 
 \newpage
 \section{Kirjallisuutta}
