@@ -114,14 +114,15 @@ Gammafunktio toteutaa kertomafunktion eli määritelmän 1 ehdot. Yhtälöstä $
 \onehalfspacing
 Bohr-Mollerupin lauseen mukaan gammafunktio on ainoa kertomafunktion yleistys, joka on logaritmisesti konveksi. Tämä ominaisuus tekee gammafunktiosta erityisen. Funktio on konveksi, kun sen kuvaaja on alaspäin kupera. Bohr-Mollerupin lauseen mukaan gammafunktion logaritmi on siis alaspäin kupera kuvaaja.
 \newline
+
 Tämän 
 
 \begin{maar}
 (konveksisuus)
 Olkoon $X\subset\mathbb{R}, t \in (0, 1)$ ja funktio $f: X \rightarrow \mathbb{R}$. Funktio $f$ on \emph{konveksi}, jos kaikilla $x,y \in X$
-\begin{align*}
+\begin{equation}
     f(tx+(1-t)y) \le tf(x)+(1-t)f(y).
-\end{align*}
+\end{equation}
 \end{maar}
 
 
@@ -130,6 +131,32 @@ Olkoon $X\subset\mathbb{R}, t \in (0, 1)$ ja funktio $f: X \rightarrow \mathbb{R
 Olkoon $X\subset\mathbb{R}, t \in (0, 1)$. Funktio $f: X \rightarrow \mathbb{R}$ on siis määritelty ja positiivinen. Funktio $f$ on \emph{logaritmisesti konveksi}, jos $logf(x)$ on \emph{konveksi}.
 \end{maar}
 
+\begin{lause}
+(Youngin epäyhtälö). Oletetaan, että $a$ ja $b$ ovat positiivisia reaalilukuja ja $q \in (0,1)$. Tällöin
+\begin{equation}
+    a^{q}b^{1-q} \le qa+(1-q)b
+\end{equation}
+\end{lause}
+\begin{proof}
+Olkoon $a,b \ge 0$ ja $q \in (1,0)$. Kun luku $a$ tai luku $b$ on nolla, niin epäyhtälö on tosi. Yhtäsuuruus pätee, jos ja vain jos $a=b$. Oletetaan, että $a,b > 0$. Käytetään apuna logaritmia ja tietoa siitä, että logaritmifunktio on konveksi.Tällöin saadaan
+\begin{equation*}
+    \ln(a^{q}b^{1-q}) = \ln(a^q) + \ln(b^{1-q}) = q \ln a+(1-q)\ln b \le \ln(qa+(1-q)b).
+\end{equation*}
+Yllä sovellettiin konveksisuuden määritelmän epäyhtälöä $(3)$. Koska tiedetään, että logaritmifunktio on myös aidosti kasvava, niin saadaan 
+\begin{equation*}
+    a^{q}b^{1-q}\le qa+(1-q)b.
+\end{equation*}
+\end{proof}
+
+\begin{lause}
+(Hölderin epäyhtälö) Oletetaan, että $t \in (0,1)$. Tällöin 
+\begin{equation}
+    \int_\R |f(x)g(x)|dx \le \left( \int_\R |f(x)|^{\frac{1}{t}} \right)^{t}\left( \int_\R |g(x)|^{\frac{1}{1-t}}\right)^{1-t}.
+\end{equation}
+\end{lause}
+\begin{proof}
+
+\end{proof}
 
 \begin{lause}
 (gammafunktio) Gammafunktio  toteuttaa seuraavat ehdot:
