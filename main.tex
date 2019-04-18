@@ -12,6 +12,7 @@
 \theoremstyle{plain}
 \newtheorem{lause}[maar]{Lause}
 \usepackage{csquotes}
+\numberwithin{equation}{section}
 \setlength{\parskip}{\medskipamount}
 \setlength{\parindent}{0pt}
 \setlength{\emergencystretch}{15pt}
@@ -56,22 +57,22 @@ Gammafunktio on epäoleellinen integraali. Tästä johtuen, tutkittaessa sen ole
 \end{align*}
 
 Tutkitaan ensin määrättyä integraalia $(a)$, kun $x>0$:\newline
-Kun luku $t$ on positiivinen, niin integtoitava osuus on selvästi pienempi kuin $t^{x-1}$. Tällöin voidaan arvioida integraalia ylöspäin seuraavasti:
+Kun luku $t$ on positiivinen, niin integtoitava osuus on pienempi kuin $t^{x-1}$. Näin saadaan
 \begin{align*}
     e^{-t} t^{x-1} < t^{x-1}.
 \end{align*} 
-Tästä saadaan 
+Tällöin voidaan arvioida integraalia ylöspäin seuraavasti 
 \begin{align*}
-    \int_{\epsilon}^{1} e^{-t} t^{x-1} dt < \int_{\epsilon}^{1} t^{x-1} d = \Big/_\epsilon^1 {t^x}x^{-1} = x^{-1} - \epsilon{^x}x^{-1}.
+    \int_{\epsilon}^{1} e^{-t} t^{x-1} dt < \int_{\epsilon}^{1} t^{x-1} d = \Big/_\epsilon^1 {t^x}x^{-1} = \frac{1}{x}-\frac{\epsilon^{x}}{x}.
 \end{align*}
-Kun $\epsilon \rightarrow 0$, niin $\epsilon^{x}x^{-1} \rightarrow 0$ ja tällöin myös $x^{-1}-\epsilon{^x}x^{-1} \rightarrow \frac{1}{x}$. Kun $\epsilon\rightarrow0$, niin epäoleellinen integraali on  rajoitettu välillä $(0, 1]$ ja raja-arvo
+Kun $\epsilon \rightarrow 0$, niin $\epsilon^{x}x^{-1}\rightarrow 0$ ja tällöin myös $x^{-1}-\epsilon{^x}x^{-1} \rightarrow \frac{1}{x}$. Siispä, kun $\epsilon\rightarrow0$, niin epäoleellinen integraali on  rajoitettu välillä $(0, 1]$ ja raja-arvo
 \begin{align*}
     \lim_{\epsilon\to\0}\int_\epsilon^{1}e^{-t}t^{x-1}dt
 \end{align*}
 on olemassa. Täten voidaan todeta, että epäoleellinen integraali $\int_{0}^{1} e^{-t} t^{x-1} dt$ on olemassa ja se suppenee. \newline
 
 Tutkitaan seuraavaksi määrättyä integraalia $(b)$, kun $x>0$: \newline
-Kun luku $t$ on positiivinen, niin kaikki $e^t>0$. Tästä seuraa, että kaikilla kokonaisluvuilla $n$ pitää paikkaansa, että $e^t\ge\frac{t^n}{n!}$. Tällöin myös $e^{-t}\le\frac{n!}{t^n}$ ja edelleen $e^{-t}t^{x-1}\le{t^{-{n+1-x}}}{n!}$. Valitaan jonkin $n>x+1$, jolloin saadaan epäoleelliselle integraalille yläraja $\delta=\frac{n!}{n-x}$, jolloin
+Kun luku $t$ on positiivinen, niin kaikki sarjan $e^t$ termit ovat positiivisia. Tällöin myös kaikilla kokonaisluvuilla $n$ pitää paikkaansa, että $e^t\ge\frac{t^n}{n!}$. Täten päästään epäyhtälöön $e^{-t}\le\frac{n!}{t^n}$ ja tästä edelleen $e^{-t}t^{x-1}\le{t^{-{n+1-x}}}{n!}$. Valitaan jonkin $n>x+1$, jolloin saadaan epäoleelliselle integraalille yläraja $\delta=\frac{n!}{n-x}$,
 \begin{align*}
     \int_1^{\delta}e^{-t}t^{x-1}dt.
 \end{align*}
@@ -79,7 +80,9 @@ Koska integraalin arvo kasvaa, kun $\delta$ kasvaa eli se kasvaa monotonisesti, 
 \begin{align*}
     \lim_{1\to\infty}\int_1^{\delta}e^{-t}t^{x-1}dt
 \end{align*}
-on olemassa. Tällöin myös epäoleellinen integraali $\int_1^{\infty}e^{-t}t^{x-1}dt$ on olemassa.
+on olemassa. Tällöin myös epäoleellinen integraali $\int_1^{\infty}e^{-t}t^{x-1}dt$ on olemassa.\newline
+
+Koska määrätyt integraalit $(a)$ ja $(b)$ ovat olemassa, niin tällöin myös epäoleellinen integraali $(2.1)$ on olemassa. Siis gammafunktio on olemassa.
 
 
 
@@ -93,13 +96,12 @@ Funktio $f: N \rightarrow N$ on kertomafunktio, jos seuraavat ehdot toteutuvat:
     Kun ehdot $i$ ja $ii$ toteutuvat, niin voidaan merkitä $f(n)=n!$.
 \end{quote}
 \end{maar}
-Kertomafunktio on monelle tuttu jo entuudestaan. Sille ominaista on arvojen hyvin nopea kasvu. Esimerkiksi: $4! = 1\cdot 2\cdot3\cdot4=24$, kun taas $5! = 1\cdot\dots\cdot5=120$.
-Kohta $i)$ on selkeä, sillä luvun $1$ kertoma on luku itse eli $1!=1$. Kohta $ii)$ puolestaan on mielenkiintoinen, koska sen mukaan kertomafunktiolla on ominaisuus, että 
+Kertomafunktio on monelle tuttu jo entuudestaan. Sille ominaista on arvojen erittäin nopea kasvu. Esimerkiksi: $4! = 1\cdot 2\cdot3\cdot4=24$, kun taas $5! = 1\cdot2\cdot3\cdot4\cdot5=120$.
+Määritelmän 1, kohta $i)$ on selkeä, sillä luvun $1$ kertoma on luku itse eli $1!=1$. Kohta $ii)$ puolestaan on mielenkiintoinen, koska sen mukaan kertomafunktiolla on ominaisuus, että 
 \begin{equation}
     (n+1)! = (n+1)n!.
 \end{equation}
-Koska gammafunktio on kertomafunktion yleistys, niin sille pätevät täysin samat ehdot kuin kertomafunktiolle.
-Gammafunktio toteutaa kertomafunktion eli määritelmän 1 ehdot. Yhtälöstä $\eqref{yhtalo:gammafunktio}$ saadaan tutkittua ensimmäinen ehto, jolloin
+Koska gammafunktio on kertomafunktion yleistys, niin sille pätevät täysin samat ehdot kuin kertomafunktiolle. Gammafunktio siis toteuttaa kertomafunktion eli määritelmän 1 ehdot. Yhtälöstä $\eqref{yhtalo:gammafunktio}$ saadaan tutkittua ensimmäinen ehto laskemalla integraali arvolla $1$. Tällöin
 \begin{equation*}
     \Gamma(1)=\int_0^\infty e^{-t}t^{1-1}dt=\int_0^\infty e^{-t}t^{0}dt = \int_0^\infty e^{-t}dt = 1.
 \end{equation*}
@@ -112,49 +114,56 @@ Gammafunktio toteutaa kertomafunktion eli määritelmän 1 ehdot. Yhtälöstä $
 
 \section{Bohr-Mollerupin lause}
 \onehalfspacing
-Bohr-Mollerupin lauseen mukaan gammafunktio on ainoa kertomafunktion yleistys, joka on logaritmisesti konveksi. Tämä ominaisuus tekee gammafunktiosta erityisen. Funktio on konveksi, kun sen kuvaaja on alaspäin kupera. Bohr-Mollerupin lauseen mukaan gammafunktion logaritmi on siis alaspäin kupera kuvaaja.
+Bohr-Mollerupin lauseen mukaan gammafunktio on ainoa kertomafunktion yleistys, joka on logaritmisesti konveksi. Tämä ominaisuus tekee gammafunktiosta erityisen. Funktio on konveksi, kun sen kuvaaja on alaspäin kupera. Bohr-Mollerupin lauseen mukaan gammafunktion logaritmi on siis kuvaaja, joka on alaspäin kupera.
 \newline
 
-Tämän 
-
 \begin{maar}
-(konveksisuus)
+(konveksisuus) \label{maar: konveksisuus}
 Olkoon $X\subset\mathbb{R}, t \in (0, 1)$ ja funktio $f: X \rightarrow \mathbb{R}$. Funktio $f$ on \emph{konveksi}, jos kaikilla $x,y \in X$
-\begin{equation}
+\begin{equation}\label{yhtalo:konveksi}
     f(tx+(1-t)y) \le tf(x)+(1-t)f(y).
 \end{equation}
 \end{maar}
 
 
 \begin{maar}
-(logaritminen konveksisuus)
+(logaritminen konveksisuus) \label{maar: logkonveksisuus}
 Olkoon $X\subset\mathbb{R}, t \in (0, 1)$. Funktio $f: X \rightarrow \mathbb{R}$ on siis määritelty ja positiivinen. Funktio $f$ on \emph{logaritmisesti konveksi}, jos $logf(x)$ on \emph{konveksi}.
 \end{maar}
 
-\begin{lause}
+\begin{lause} \label{lause: young}
 (Youngin epäyhtälö). Oletetaan, että $a$ ja $b$ ovat positiivisia reaalilukuja ja $q \in (0,1)$. Tällöin
 \begin{equation}
     a^{q}b^{1-q} \le qa+(1-q)b
 \end{equation}
 \end{lause}
 \begin{proof}
-Olkoon $a,b \ge 0$ ja $q \in (1,0)$. Kun luku $a$ tai luku $b$ on nolla, niin epäyhtälö on tosi. Yhtäsuuruus pätee, jos ja vain jos $a=b$. Oletetaan, että $a,b > 0$. Käytetään apuna logaritmia ja tietoa siitä, että logaritmifunktio on konveksi.Tällöin saadaan
+Olkoon $a,b \ge 0$ ja $q \in (1,0)$. Kun luku jompi kumpi luvuista $a$ tai $b$ on nolla, niin epäyhtälö on tosi. Yhtäsuuruus pätee, jos ja vain jos $a=b$. Oletetaan, että $a,b > 0$. Käytetään apuna logaritmia ja tietoa siitä, että logaritmifunktio on konveksi.Tällöin saadaan
 \begin{equation*}
     \ln(a^{q}b^{1-q}) = \ln(a^q) + \ln(b^{1-q}) = q \ln a+(1-q)\ln b \le \ln(qa+(1-q)b).
 \end{equation*}
-Yllä sovellettiin konveksisuuden määritelmän epäyhtälöä $(3)$. Koska tiedetään, että logaritmifunktio on myös aidosti kasvava, niin saadaan 
+Yllä sovellettiin konveksisuuden määritelmän epäyhtälöä $\eqref{yhtalo:konveksi}$. Koska tiedetään, että logaritmifunktio on myös aidosti kasvava, niin saadaan 
 \begin{equation*}
     a^{q}b^{1-q}\le qa+(1-q)b.
 \end{equation*}
 \end{proof}
 
-\begin{lause}
+\begin{lause} \label{lause: hölder}
 (Hölderin epäyhtälö) Oletetaan, että $t \in (0,1)$. Tällöin 
 \begin{equation}
-    \int_\R |f(x)g(x)|dx \le \left( \int_\R |f(x)|^{\frac{1}{t}} \right)^{t}\left( \int_\R |g(x)|^{\frac{1}{1-t}}\right)^{1-t}.
+    \int_{\mathbb{R}} |f(x)g(x)|dx \le \left( \int_{\mathbb{R}} |f(x)|^{\frac{1}{t}} \right)^{t}\left( \int_{\mathbb{R}} |g(x)|^{\frac{1}{1-t}}\right)^{1-t}.
 \end{equation}
 \end{lause}
 \begin{proof}
+Kun $\int_\mathbb{R}|f(x)|^{\frac{1}{t}}dx$, niin on oltava $f(x)=0$. Tällöin pätee myös, että
+\begin{equation}
+    \int_{\mathbb{R}} |f(x)g(x)|dx=0.
+\end{equation}
+Vastaavasti myös $g(x)=0$, kun $\int_{\mathbb{R}}|g(x)|^{\frac{1}{1-t}}dx=0$. \newline
+Olkoon $t\in(0,1).$ Käytetään nyt \emph{Youngin epäyhtölöä}, \eqref{lause: young} lauseen todistuksessa, jolloin saadaan
+\begin{equation}
+    \frac{|f(x)||g(x)|}{(\int_{\mathbb{R}}|f(x)|}
+\end{equation}
 
 \end{proof}
 
