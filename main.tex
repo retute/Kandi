@@ -37,9 +37,9 @@
 \onehalfspacing
 Tämän tutkielman tavoitteena on esitellä gammafunktiota ja sen ominaisuuksia. Tutkielmassa olen keskittynyt tarkemmin gammafunktion ainutlaatuisuuteen ja siihen liittyviin ominaisuuksiin. Tämän lisäksi esittelen gammafunktion ja kertomafunktion välistä yhteyttä.
 
-Gammafunktio on eräs kertomafunktion yleistyksistä, jota kuvataan symbolilla $\Gamma(x)$. Gammafunktio on erityinen, sillä se on kertomafunktion yleistyksistä ainoa, jonka logaritmi on konveksi eli se on \emph{logaritmisesti konveksi}. Tutkielmassa osoitan, että kaikki Bohr-Mollerupin -lauseen toteuttavat funktiot ovat yhteneviä gammafunktion kanssa.
+Gammafunktio on eräs kertomafunktion yleistyksistä, jota kuvataan symbolilla $\Gamma$. Gammafunktio on erityinen, sillä se on kertomafunktion yleistyksistä ainoa, jonka logaritmi on konveksi eli se on \emph{logaritmisesti konveksi}. Tutkielmassa osoitan, että kaikki Bohrin-Mollerupin lauseen toteuttavat funktiot ovat yhteneviä gammafunktion kanssa.
 
-Tutkielman alussa määrittelen gammafunktion ja kerron hieman sen taustasta. Tämän jälkeen seuraa Luku 3, \emph{Bohr-Mollerupin lause}, jossa käsittelen tarkemmin gammafunktiota. Bohr-Mollerupin -lauseen todistamisessa käytän apuna konveksisuuden, logaritmisen konveksisuuden ja gammafunktion määritelmiä. Gammafunktion todistamisessa käytän puolestaan apuna $\emph{Youngin}$ ja $\emph{Hölderin}$ epäyhtälöitä.
+Tutkielman alussa määrittelen gammafunktion ja kerron hieman sen taustasta. Tämän jälkeen seuraa Luku 3, \emph{Bohrin-Mollerupin lause}, jossa käsittelen tarkemmin gammafunktiota. Bohrin-Mollerupin lauseen todistamisessa käytän apuna konveksisuuden, logaritmisen konveksisuuden ja gammafunktion määritelmiä. Gammafunktion todistamisessa käytän puolestaan apuna $\emph{Youngin}$ ja $\emph{Hölderin}$ epäyhtälöitä.
 
 \newpage
 
@@ -54,11 +54,11 @@ missä $\Gamma:(0,\infty)\rightarrow\mathbb{R}$ ja $x>0$.
 \includegraphics[width=0.7\textwidth]{Gamma-function.png} \newline
 \caption{Gammafunktion kulkua välillä $[-4,4]$}
 \end{center}
-\newpage
-Gammafunktio on epäoleellinen integraali. Tästä johtuen, tutkittaessa sen olemassaoloa, tulee se olla määriteltynä hyvin. Tällöin tutkitaan siis määrättyjä integraaleja
+
+Gammafunktio on epäoleellinen integraali. Tästä johtuen, tutkittaessa sen olemassaoloa tulee se olla määriteltynä hyvin. Tällöin tutkitaan siis määrättyjä integraaleja
 \begin{align*}
-    (a) \int_{\epsilon}^{1} e^{-t} t^{x-1} dt \\
-    (b) \int_{1}^{\delta} e^{-t} t^{x-1} dt.
+    &(a) \int_{\epsilon}^{1} e^{-t} t^{x-1} dt, \hspace{0.1\textwidth} 0<\epsilon<1 \\
+    & (b) \int_{1}^{\delta} e^{-t} t^{x-1} dt, \hspace{0.1\textwidth} \delta>1.
 \end{align*}
 
 Tutkitaan ensin määrättyä integraalia $(a)$, kun $x>0$:\newline
@@ -77,7 +77,7 @@ Kun $\epsilon \rightarrow 0$, niin $\epsilon^{x}x^{-1}\rightarrow 0$ ja tällöi
 on olemassa. Täten voidaan todeta, että epäoleellinen integraali $\int_{0}^{1} e^{-t} t^{x-1} dt$ on olemassa ja se suppenee. \newline
 
 Tutkitaan seuraavaksi määrättyä integraalia $(b)$, kun $x>0$: \newline
-Kun luku $t$ on positiivinen, niin kaikki sarjan $e^t$ termit ovat positiivisia. Tällöin myös kaikilla kokonaisluvuilla $n$ pitää paikkaansa, että $e^t\ge\frac{t^n}{n!}$. Täten päästään epäyhtälöön $e^{-t}\le\frac{n!}{t^n}$ ja tästä edelleen $e^{-t}t^{x-1}\le{t^{-{n+1-x}}}{n!}$. Valitaan jokin $n>x+1$, jolloin saadaan epäoleelliselle integraalille yläraja $\delta=\frac{n!}{n-x}$. Tällöin
+Kun luku $t$ on positiivinen, niin kaikki termi $e^t$ on aina positiivinen. Tällöin myös kaikilla kokonaisluvuilla $n$ pitää paikkaansa, että $e^t\ge\frac{t^n}{n!}$. Täten päästään epäyhtälöön $e^{-t}\le\frac{n!}{t^n}$ ja tästä edelleen $e^{-t}t^{x-1}\le{t^{-{n+1-x}}}{n!}$. Valitaan jokin $n>x+1$, jolloin saadaan epäoleelliselle integraalille yläraja $\delta=\frac{n!}{n-x}$. Tällöin
 \begin{align*}
     \int_1^{\delta}e^{-t}t^{x-1}dt.
 \end{align*}
@@ -85,19 +85,19 @@ Koska integraalin arvo kasvaa monotonisesti eli sen arvo kasvaa, kun $\delta$ ka
 \begin{align*}
     \lim_{\delta\to\infty}\int_1^{\delta}e^{-t}t^{x-1}dt
 \end{align*}
-on olemassa. Tällöin myös epäoleellinen integraali $\int_1^{\infty}e^{-t}t^{x-1}dt$ on olemassa.\newline
+on olemassa. Tällöin myös epäoleellinen integraali $\int_1^{\infty}e^{-t}t^{x-1}dt$ on olemassa.
 
-Nyt todettiin, että määrätyt integraalit $(a)$ ja $(b)$ ovat olemassa. Tällöin myös epäoleellinen integraali $(2.1)$ on olemassa, jolloin voidaan todetä, että gammafunktio on olemassa.
+Nyt todettiin, että määrätyt integraalit $(a)$ ja $(b)$ ovat olemassa. Tällöin myös epäoleellinen integraali $(2.1)$ on olemassa, jolloin voidaan todeta, että gammafunktio on olemassa.
 
 
 
 \subsection{Kertomafunktio}
 \begin{maar}
 (kertomafunktio)
-Funktio $f: N \rightarrow N$ on kertomafunktio, jos seuraavat ehdot toteutuvat:
+Funktio $f: \mathbb{N} \rightarrow \mathbb{N}$ on kertomafunktio, jos seuraavat ehdot toteutuvat:
 \begin{quote}
-    $i)$ $f(1)=1$ \newline
-    $ii)$ $f(n+1)=(n+1)f(n)$ \newline
+    $i)$ $f(1)=1$, \newline
+    $ii)$ $f(n+1)=(n+1)f(n)$. \newline
     Kun ehdot $i)$ ja $ii)$ toteutuvat, niin voidaan merkitä $f(n)=n!$.
 \end{quote}
 \end{maar}
@@ -119,9 +119,9 @@ Toisen ehdon todistus tapahtuu \emph{Lause 3}:n todistuksen yhteydessä.
 
 \newpage
 
-\section{Bohr-Mollerupin lause}
+\section{Bohrin-Mollerupin lause}
 \onehalfspacing
-Bohr-Mollerupin lauseen mukaan gammafunktio on ainoa kertomafunktion yleistys, joka on logaritmisesti konveksi. Tämä ominaisuus tekee gammafunktiosta erityisen. Funktiota sanotaan konveksiseksi, kun sen kuvaaja on alaspäin kupera. Lauseen mukaan gammafunktion logaritmin kuvaaja on siis alaspäin kupera.
+Bohrin-Mollerupin lauseen mukaan gammafunktio on ainoa kertomafunktion yleistys, joka on logaritmisesti konveksi. Tämä ominaisuus tekee gammafunktiosta erityisen. Funktiota sanotaan konveksiseksi, kun sen kuvaaja on alaspäin kupera. Lauseen mukaan gammafunktion logaritmin kuvaaja on siis alaspäin kupera.
 \newline
 
 \begin{maar}
@@ -141,11 +141,11 @@ Olkoon $X\subset\mathbb{R}, t \in (0, 1)$. Funktio $f: X \rightarrow \mathbb{R}$
 \begin{lause} \label{lause: young}
 (Youngin epäyhtälö). Oletetaan, että $a$ ja $b$ ovat positiivisia reaalilukuja ja $q \in (0,1)$. Tällöin
 \begin{equation}\label{yhtalo:youngi}
-    a^{q}b^{1-q} \le qa+(1-q)b
+    a^{q}b^{1-q} \le qa+(1-q)b.
 \end{equation}
 \end{lause}
 \begin{proof}
-Olkoon $a,b \ge 0$ ja $q \in (1,0)$. Kun luku jompi kumpi luvuista $a$ tai $b$ on nolla, niin epäyhtälö on tosi. Yhtäsuuruus pätee, jos ja vain jos $a=b$. Oletetaan, että $a,b > 0$. Käytetään apuna logaritmia ja tietoa siitä, että logaritmifunktio on konveksi.Tällöin saadaan
+Olkoon $a,b \ge 0$ ja $q \in (1,0)$. Kun jompi kumpi luvuista $a$ tai $b$ on nolla, niin epäyhtälö on tosi. Yhtäsuuruus pätee, jos ja vain jos $a=b$. Oletetaan, että $a,b > 0$. Käytetään apuna logaritmia ja tietoa siitä, että logaritmifunktio on konveksi.Tällöin saadaan
 \begin{equation*}
     \log[a^{q}b^{1-q}] = \log[a^q] + \log[b^{1-q}] = q \log [a]+(1-q)\log [b] \le \log[qa+(1-q)b].
 \end{equation*}
@@ -168,7 +168,7 @@ Kun $\int_\mathbb{R}|f(x)|^{\frac{1}{t}}dx=0$,  niin $f(x)=0$. Tällöin pätee 
 \end{equation}
 Vastaavasti myös $g(x)=0$, kun $\int_{\mathbb{R}}|g(x)|^{\frac{1}{1-t}}dx=0$. Koska lause pätee näillä arvoilla, voidaan olettaa nämä integraalit positiivisiksi.
 
-Olkoon $t\in(0,1).$ Käytetään nyt \emph{Youngin epäyhtälöä}, \eqref{yhtalo:youngi}, lauseen todistuksessa, jolloin saadaan
+Olkoon $t\in(0,1).$ Käytetään nyt \emph{Youngin epäyhtälöä} \eqref{yhtalo:youngi} lauseen todistuksessa, jolloin saadaan
 \begin{equation*}
     \frac{|f(x)||g(x)|}{\left(\int_{\mathbb{R}}|f(x)|^{\frac{1}{t}}\right)^{t}\left(\int_{\mathbb{R}}|g(x)|^{\frac{1}{1-t}}\right)^{1-t}} \le t\frac{|f(x)|^{\frac{1}{t}}}{\left(\int_{\mathbb{R}}|f(x)|^{\frac{1}{t}}df\right)^{t}}+(1-t)\frac{|g(x)|^{\frac{1}{1-t}}}{\left(\int_{\mathbb{R}}|g(x)|^{\frac{1}{1-t}}dx\right)^{1-t}}.
 \end{equation*}
@@ -176,7 +176,7 @@ Integroidaan epäyhtälöä puolittain, yli reaaliakselin, jolloin saadaan
 \begin{equation*}
      \frac{|f(x)||g(x)|}{\left(\int_{\mathbb{R}}|f(x)|^{\frac{1}{t}}\right)^{t}\left(\int_{\mathbb{R}}|g(x)|^{\frac{1}{1-t}}\right)^{1-t}}\le t+1-t=1.
 \end{equation*}
-Näin päästään haluttuun muotoon, joka oli
+Näin päästään haluttuun muotoon, joka on
 \begin{equation*}
     \int_{\mathbb{R}} |f(x)||g(x)|dx \le \left( \int_{\mathbb{R}} |f(x)|^{\frac{1}{t}} \right)^{t}\left( \int_{\mathbb{R}} |g(x)|^{\frac{1}{1-t}}\right)^{1-t}.
 \end{equation*}
@@ -184,7 +184,7 @@ Näin päästään haluttuun muotoon, joka oli
 \end{proof}
 
 \begin{lause}
-(gammafunktio) Gammafunktio  toteuttaa seuraavat ehdot:
+(gammafunktio) Gammafunktio $\Gamma : (0, \infty) \rightarrow \mathbb{R}$  toteuttaa seuraavat ehdot:
 \begin{quote}
     i) $\Gamma(1)=1$ \newline
     ii) $\Gamma(x+1)=x\Gamma(x)$ \newline
@@ -199,7 +199,7 @@ Ehto $i)$ saadaan suoraan sijoittamalla luku $1$ yhtälöön \eqref{yhtalo:gamma
 \end{align*}
 Ehto $ii)$ puolestaan voidaan osoittaa todeksi, kun sijoitetaan yhtälöön \eqref{yhtalo:gammafunktio} $x$:n paikalle $x+1$, kun $x>0$
 \begin{equation}\label{yhtalo:joku}
-    \Gamma(x+1)=e^{-t}t^{(x+1)-1} = e^{-t}t^{x}.
+    \Gamma(x+1)= \int_{\epsilon}^{\delta} e^{-t}t^{(x+1)-1} dt= \int_{\epsilon}^{\delta} e^{-t}t^{x} dt.
 \end{equation}
 Nyt osittaisintegroidaan integraali \eqref{yhtalo:joku}
 \begin{align*}
@@ -232,11 +232,11 @@ Nyt otetaan logaritmi puolittain ja käytetään logaritmin summaussääntöä h
 \end{equation*}
 Näin saatiin todistettua kolmas ehto, eli gammafunktio toteuttaa kaikki lauseen ehdot. \newline
 \end{proof}
+\newpage
 
 \begin{lause}
-(Bohr-Mollerupin lause)
-\newline
-Jos funktio $f(x)$ toteuttaa seuraavat kolme ehtoa, niin se on gammafunktio:
+(Bohrin-Mollerupin lause)
+Jos funktio $f: (0, \infty) \rightarrow \mathbb{R}$ toteuttaa seuraavat kolme ehtoa, niin se on gammafunktio:
 \begin{quote}
 i) $f(1)=1$ \newline
 ii) $f(x+1)=xf(x)$ \newline
@@ -245,7 +245,7 @@ iii) Funktio $f(x)$ on logaritmisesti konveksi funktio.
 \end{lause}
 
 \begin{proof}
-Aikaisemmin todettiin, että gammafunktio toteuttaa nämä kolme ehtoa. Voidaan siis olettaa, että on olemassa ainakin yksi funktio, joka toteuttaa edellä mainitut ehdot ja  Bohr-Mollerupin lauseen mukaan gammafunktio on ainoa tällainen funktio. Täytyy siis osoittaa, että funktio, joka toteuttaa nämä ehdot, on yhtenevä gammafunktion kanssa.
+Aikaisemmin todettiin, että gammafunktio toteuttaa nämä kolme ehtoa. Voidaan siis olettaa, että on olemassa ainakin yksi funktio, joka toteuttaa edellä mainitut ehdot ja  Bohrin-Mollerupin lauseen mukaan gammafunktio on ainoa tällainen funktio. Täytyy siis osoittaa, että funktio, joka toteuttaa nämä ehdot, on yhtenevä gammafunktion kanssa.
 
 Valitaan funktio $f$ ja oletetaan, että se toteuttaa nämä kolme ehtoa. Ensimmäisen ja toisen ehdon seurauksena riittää, että tarkastellaan vain tilannetta, jossa $x\in (0,1)$. Lisäksi soveltamalla logaritmin summaussääntöä ehtoon $ii)$ seuraa
 \begin{equation} \label{yhtalo:logfx}
@@ -255,7 +255,7 @@ Koska funktio $f$ on oletuksen mukaan logaritmisesti konveksi, on sen logaritmi 
 \begin{equation*}
     \frac{\log f(n+1)-\log f(n)}{n+1-n}\le\frac{\log f(n+1+x)-\log f(n+1)}{n+1+x-(n+1)}.
 \end{equation*}
-Avaamalla sulkeet ja käyttämällä logaritmin laskusääntöjä, saadaan epäyhtälö seuraavaan muotoon
+Avaamalla sulkeet ja käyttämällä logaritmin laskusääntöjä saadaan epäyhtälö seuraavaan muotoon
 \begin{equation*}
     \log \frac{f(n+1)}{f(n)} \le \frac{\log f(n+1+x)-\log f(n+1)}{x}.
 \end{equation*}
@@ -287,7 +287,7 @@ Kun $n\rightarrow\infty$, niin $\log (1+\frac{1}{n})\rightarrow \log (1)$. Koska
 \begin{equation*}
     f(x)=\lim_{n\to\infty} \frac{n^xn!}{x(x+1)\cdots(x+n)}.
 \end{equation*}
-Funktio $f(x)$ siis toteuttaa kaikki kolme ehtoa. Tämän lisäksi tiedämme, että myös gammafunktio, $\Gamma(x)$, toteuttaa ne. Kuitenkin juuri johdettu muoto pitää paikkaansa myös tilanteessa, jossa funktion $f(x)$ tilalle vaihdetaan funktio $\Gamma(x)$. Siispä funktio $f(x)$ on yhtenevä gammafunktion kanssa. Näin saadaan
+Funktio $f$ siis toteuttaa kaikki kolme ehtoa. Tämän lisäksi tiedämme, että myös gammafunktio $\Gamma$ toteuttaa ne. Kuitenkin juuri johdettu muoto pitää paikkaansa myös tilanteessa, jossa funktion $f$ tilalle vaihdetaan funktio $\Gamma$. Siispä funktio $f$ on yhtenevä gammafunktion kanssa. Näin saadaan
 \begin{equation*}
     \Gamma(x) = \lim_{n\to\infty}\frac{n^xn!}{x(x+1)\cdots(x+n)}.
 \end{equation*}
